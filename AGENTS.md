@@ -268,14 +268,69 @@ execution/skills/
 
 ---
 
+## 📝 Sistema de CHANGELOG (Rastreabilidade)
+
+Este projeto usa `CHANGELOG.md` para rastreabilidade de mudanças.
+
+### Quando Consultar (Leitura Inteligente)
+
+✅ **SEMPRE antes de modificar:**
+- Diretivas existentes
+- Skills existentes
+- Scripts existentes
+
+✅ **Técnicas de leitura eficiente:**
+```bash
+# Últimas 5-10 entradas apenas
+head -30 CHANGELOG.md
+
+# Por categoria específica
+grep '[DIRECTIVE]' CHANGELOG.md
+grep '[SKILL]' CHANGELOG.md
+grep '[FIX]' CHANGELOG.md
+
+# Por arquivo específico
+grep 'nome-arquivo' CHANGELOG.md
+```
+
+❌ **NUNCA ler changelog completo** (desperdício de tokens!)
+
+### Quando Atualizar (Escrita Concisa)
+
+✅ **SEMPRE após criar/modificar:**
+- Nova diretiva
+- Nova skill
+- Novo script importante
+- Fix significativo
+
+📝 **Formato (1 linha!):**
+```
+[CATEGORIA] Descrição (<50 chars) | path/arquivo
+```
+
+**Categorias:** `DIRECTIVE`, `SKILL`, `SCRIPT`, `DOC`, `FIX`, `CONFIG`
+
+**Exemplo:**
+```
+[DIRECTIVE] Setup Firebase Project | directives/development/setup-firebase-project.md
+[SKILL] WhatsApp Tester | execution/skills/whatsapp_tester/
+[FIX] Encoding error em metrics | execution/operations/metrics_collector.py
+```
+
+📚 **Guia completo:** `CHANGELOG-AGENT-GUIDE.md`
+
+---
+
 ## 📝 Como Começar
 
 1. **Identifique uma tarefa repetitiva** que você faz frequentemente
-2. **Crie uma diretiva** em `directives/nome_tarefa.md` descrevendo o processo
-3. **Verifique skills disponíveis** antes de criar ferramentas novas
-4. **Identifique ferramentas** necessárias ou crie scripts em `execution/`
-5. **Execute e itere** - deixe o sistema self-anneal
-6. **Documente aprendizados** atualizando a diretiva
+2. **Consulte CHANGELOG** para ver se já existe algo similar
+3. **Crie uma diretiva** em `directives/nome_tarefa.md` descrevendo o processo
+4. **Verifique skills disponíveis** antes de criar ferramentas novas
+5. **Identifique ferramentas** necessárias ou crie scripts em `execution/`
+6. **Execute e itere** - deixe o sistema self-anneal
+7. **Documente aprendizados** atualizando a diretiva
+8. **Atualize CHANGELOG** com a mudança (1 linha concisa!)
 
 ---
 
