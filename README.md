@@ -499,4 +499,3 @@ Para dúvidas ou sugestões:
 5. [ ] Iterar e melhorar (self-anneal!)
 
 **Boa automação! 🚀**
-# doe-template

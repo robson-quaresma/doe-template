@@ -185,13 +185,97 @@ projeto/
 
 ---
 
+## 🛠️ Skills (Capacidades Especializadas)
+
+Skills são módulos de expertise que podem ser invocados quando necessário. Pense nelas como "ferramentas especializadas" que o agent pode usar.
+
+### **Skills Públicas (Built-in)**
+
+Estas skills estão sempre disponíveis no sistema:
+
+#### 📄 **Document Skills**
+- `docx` - Criação e edição de Word documents
+- `xlsx` - Manipulação de planilhas Excel  
+- `pptx` - Geração de apresentações PowerPoint
+- `pdf` - Leitura e criação de PDFs
+
+**Quando usar:**
+- Gerar relatórios formatados
+- Criar apresentações automatizadas
+- Processar planilhas de dados
+- Extrair texto de PDFs
+
+#### 🌐 **Web Skills**
+- `web_search` - Busca na web
+- `web_fetch` - Download de páginas específicas
+- `web_scrape` - Extração estruturada de dados
+
+**Quando usar:**
+- Validação de ideias (market research)
+- Coleta de dados de concorrentes
+- Verificação de informações atualizadas
+
+#### 🧠 **AI Skills**
+- `claude_analyze` / `gemini_analyze` - Análise profunda
+- `claude_summarize` / `gemini_summarize` - Sumarização
+- `claude_extract` / `gemini_extract` - Extração estruturada
+
+**Quando usar:**
+- Analisar grandes volumes de texto
+- Gerar insights de dados não-estruturados
+- Extrair informação específica
+
+#### 🔗 **Integration Skills**
+- `jira_client` - Interação com Jira
+- `github_client` - Operações no GitHub
+- `slack_notify` - Notificações Slack
+- `gdocs_client` - Google Docs/Sheets/Drive
+
+**Quando usar:**
+- Coletar dados de project management
+- Analisar código e PRs
+- Enviar notificações
+- Criar deliverables em cloud
+
+### **Skills Customizadas (User-Created)**
+
+Usuários podem criar suas próprias skills em `execution/skills/`.
+
+**Estrutura típica:**
+```
+execution/skills/
+├── skill_name/
+│   ├── SKILL.md          # Documentação
+│   ├── skill_main.py     # Script principal
+│   └── config.json       # Configurações
+```
+
+**Como usar skills customizadas:**
+1. Leia a documentação (`SKILL.md`)
+2. Verifique requirements (dependencies, env vars)
+3. Execute conforme documentado
+
+### **Skills vs Scripts Normais**
+
+| Aspecto | Skill | Script Normal |
+|---------|-------|---------------|
+| Escopo | Reutilizável cross-projects | Específico de uma diretiva |
+| Documentação | SKILL.md obrigatório | Opcional |
+| Configuração | config.json | Hardcoded ou args |
+| Compartilhamento | Pode ser publicada | Interno ao projeto |
+
+**Regra:** Sempre verifique se existe skill para a tarefa antes de criar script novo!
+
+---
+
 ## 📝 Como Começar
 
 1. **Identifique uma tarefa repetitiva** que você faz frequentemente
 2. **Crie uma diretiva** em `directives/nome_tarefa.md` descrevendo o processo
-3. **Identifique ferramentas** necessárias ou crie scripts em `execution/`
-4. **Execute e itere** - deixe o sistema self-anneal
-5. **Documente aprendizados** atualizando a diretiva
+3. **Verifique skills disponíveis** antes de criar ferramentas novas
+4. **Identifique ferramentas** necessárias ou crie scripts em `execution/`
+5. **Execute e itere** - deixe o sistema self-anneal
+6. **Documente aprendizados** atualizando a diretiva
 
 ---
 

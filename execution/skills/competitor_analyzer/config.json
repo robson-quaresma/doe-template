@@ -1,0 +1,59 @@
+{
+  "skill_name": "competitor_analyzer",
+  "version": "1.0.0",
+  "description": "Automated competitor analysis for SaaS products",
+  "author": "Quaresma - Qriterion Tech Lab",
+  "created": "2024-01-30",
+  
+  "default_config": {
+    "aspects": ["pricing", "features", "reviews"],
+    "depth": "standard",
+    "output_format": "markdown",
+    "cache_ttl_hours": 24
+  },
+  
+  "sources": {
+    "reviews_platforms": [
+      "g2.com",
+      "capterra.com", 
+      "trustpilot.com",
+      "producthunt.com"
+    ],
+    "traffic_analyzer": "similarweb",
+    "feature_extraction": "website_scrape"
+  },
+  
+  "output": {
+    "supported_formats": ["json", "markdown", "gdoc"],
+    "default_format": "markdown",
+    "gdoc_template_id": null
+  },
+  
+  "dependencies": {
+    "python_packages": [
+      "requests>=2.31.0",
+      "beautifulsoup4>=4.12.0",
+      "anthropic>=0.8.1",
+      "google-api-python-client>=2.100.0"
+    ],
+    "env_vars_required": [
+      "ANTHROPIC_API_KEY"
+    ],
+    "env_vars_optional": [
+      "SIMILARWEB_API_KEY",
+      "GOOGLE_CREDENTIALS_PATH"
+    ]
+  },
+  
+  "rate_limits": {
+    "max_requests_per_minute": 10,
+    "delay_between_requests_seconds": 2,
+    "respect_robots_txt": true
+  },
+  
+  "cache": {
+    "enabled": true,
+    "ttl_hours": 24,
+    "storage_path": ".tmp/skills_cache/competitor_analyzer/"
+  }
+}
