@@ -1,0 +1,224 @@
+# DOE Framework - Git Ignore
+
+# =====================================
+# ENVIRONMENT & SECRETS
+# =====================================
+.env
+.env.local
+.env.*.local
+*.secret
+*.key
+credentials.json
+token.json
+firebase-credentials.json
+
+# =====================================
+# TEMPORARY FILES (.tmp directory)
+# =====================================
+.tmp/
+*.tmp
+*.temp
+temp/
+tmp/
+
+# =====================================
+# LOGS
+# =====================================
+*.log
+logs/
+*.log.*
+
+# =====================================
+# PYTHON
+# =====================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# =====================================
+# JAVA
+# =====================================
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+.idea/
+.gradle/
+build/
+
+# =====================================
+# NODE.JS
+# =====================================
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# =====================================
+# GO
+# =====================================
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+
+# Output of go build
+vendor/
+
+# =====================================
+# DART/FLUTTER
+# =====================================
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# =====================================
+# IDEs & EDITORS
+# =====================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# =====================================
+# OUTPUTS & CACHE
+# =====================================
+*.pdf
+*.xlsx
+*.docx
+*.pptx
+# Exceções: se quiser versionar templates
+!templates/*.docx
+!templates/*.pptx
+
+# Charts/Graphs
+*.png
+*.jpg
+*.jpeg
+*.svg
+# Exceção: se quiser versionar assets
+!assets/*.png
+!assets/*.jpg
+
+# Cache
+.cache/
+*.cache
+
+# =====================================
+# DATABASE
+# =====================================
+*.db
+*.sqlite
+*.sqlite3
+
+# =====================================
+# OPERATING SYSTEM
+# =====================================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# =====================================
+# OUTROS
+# =====================================
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+# Exceção: se quiser versionar releases
+!releases/*.zip
+
+# Personal notes
+notes.txt
+TODO.txt
+SCRATCH.md

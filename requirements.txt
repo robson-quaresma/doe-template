@@ -1,0 +1,118 @@
+# DOE Framework - Python Dependencies
+# Install: pip install -r requirements.txt
+
+# =====================================
+# CORE DEPENDENCIES
+# =====================================
+python-dotenv>=1.0.0          # Gerenciamento de variáveis de ambiente
+requests>=2.31.0              # HTTP requests
+httpx>=0.25.0                 # HTTP client assíncrono (alternativa moderna)
+
+# =====================================
+# DATA PROCESSING
+# =====================================
+pandas>=2.1.0                 # Data manipulation e análise
+numpy>=1.24.0                 # Numerical computing
+
+# =====================================
+# JIRA INTEGRATION
+# =====================================
+jira>=3.5.0                   # Jira Cloud API client
+atlassian-python-api>=3.41.0  # Atlassian APIs (Jira, Confluence)
+
+# =====================================
+# GITHUB INTEGRATION
+# =====================================
+PyGithub>=2.1.1               # GitHub REST API v3
+ghapi>=1.0.4                  # GitHub API wrapper
+
+# =====================================
+# GOOGLE WORKSPACE (Docs, Sheets, Drive)
+# =====================================
+google-api-python-client>=2.100.0
+google-auth-httplib2>=0.1.1
+google-auth-oauthlib>=1.1.0
+gspread>=5.12.0               # Google Sheets simplificado
+
+# =====================================
+# AI/ML INTEGRATION
+# =====================================
+anthropic>=0.8.1              # Claude API
+openai>=1.6.0                 # OpenAI API (opcional)
+langchain>=0.1.0              # LangChain framework (opcional)
+langchain-anthropic>=0.1.0    # LangChain + Anthropic
+
+# =====================================
+# WEB SCRAPING
+# =====================================
+beautifulsoup4>=4.12.0        # HTML parsing
+html2text>=2020.1.16          # HTML to markdown
+selenium>=4.15.0              # Browser automation (se necessário)
+apify-client>=1.6.0           # Apify API client
+
+# =====================================
+# DOCUMENT GENERATION
+# =====================================
+python-docx>=1.1.0            # Word documents
+openpyxl>=3.1.2               # Excel files
+reportlab>=4.0.7              # PDF generation
+matplotlib>=3.8.0             # Charts and graphs
+seaborn>=0.13.0               # Statistical data visualization
+pillow>=10.1.0                # Image processing
+
+# =====================================
+# NOTIFICATIONS
+# =====================================
+slack-sdk>=3.26.0             # Slack API
+sendgrid>=6.11.0              # Email via SendGrid
+
+# =====================================
+# DATABASE (OPCIONAL)
+# =====================================
+# sqlalchemy>=2.0.23          # SQL toolkit
+# psycopg2-binary>=2.9.9      # PostgreSQL adapter
+# pymongo>=4.6.0              # MongoDB
+
+# =====================================
+# UTILITIES
+# =====================================
+pyyaml>=6.0.1                 # YAML parsing
+toml>=0.10.2                  # TOML parsing
+click>=8.1.7                  # CLI creation
+rich>=13.7.0                  # Terminal formatting
+tqdm>=4.66.0                  # Progress bars
+
+# =====================================
+# TESTING (OPCIONAL)
+# =====================================
+# pytest>=7.4.3
+# pytest-cov>=4.1.0
+# pytest-mock>=3.12.0
+
+# =====================================
+# CODE QUALITY (OPCIONAL)
+# =====================================
+# black>=23.12.0              # Code formatter
+# flake8>=6.1.0               # Linter
+# mypy>=1.7.0                 # Type checker
+# isort>=5.13.0               # Import sorter
+
+# =====================================
+# DEPLOYMENT (OPCIONAL)
+# =====================================
+# gunicorn>=21.2.0            # WSGI server
+# uvicorn>=0.25.0             # ASGI server
+# fastapi>=0.108.0            # Web framework
+
+# =====================================
+# NOTES
+# =====================================
+# Para instalar apenas dependências core:
+# pip install python-dotenv requests pandas jira PyGithub google-api-python-client anthropic
+
+# Para ambiente de desenvolvimento (com testing e quality):
+# pip install -r requirements.txt
+# pip install pytest black flake8
+
+# Para produção (apenas necessário):
+# pip install --no-dev -r requirements.txt
