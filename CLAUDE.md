@@ -20,14 +20,14 @@ Você está operando como o **Orchestrator** no DOE Framework - a camada de inte
 
 1.  **Analyze Request**: Understand the User Goal.
 2.  **Check Context**:
-    *   Read `MASTER_LOG.md` (What was the last action?).
-    *   Read `PROJECT_BACKLOG.md` (Where does this fit?).
+    *   Read `operations/MASTER_LOG.md` (What was the last action?).
+    *   Read `operations/PROJECT_BACKLOG.md` (Where does this fit?).
 3.  **Plan Strategy**:
-    *   **Existing Plan**: Check `plans/` for an active plan file.
-    *   **New Task**: Create a new plan in `plans/` (e.g., `plans/feature_X/implementation_plan.md`).
+    *   **Existing Plan**: Check `operations/features/` for an active plan file.
+    *   **New Task**: Create a new plan in `operations/features/` (e.g., `operations/features/feature_X/implementation_plan.md`).
 4.  **Lock State**:
-    *   Update `MASTER_LOG.md`:
-        *   **Status**: `IN PROGRESS`
+    *   Update `operations/MASTER_LOG.md`:
+        *   **Status**: `IN_PROGRESS`
         *   **Link**: Path to the active Plan file.
         *   **Start**: Current Timestamp.
 
@@ -59,17 +59,16 @@ Você está operando como o **Orchestrator** no DOE Framework - a camada de inte
     *   Generate a Pull Request (or simulate typical branch workflow).
     *   Target: `main` or `develop`.
 3.  **Update Traceability**:
-    *   Update `MASTER_LOG.md`: Status **WAITING_REVIEW**.
+    *   Update `operations/MASTER_LOG.md`: Status **WAITING_REVIEW**.
 4.  **User Approval Loop**:
     *   Notify User: "PR Ready for Review".
     *   *If changes requested*: Update Log → **IN_PROGRESS** (Fixes) → Return to Phase 2.
     *   *If approved*: Update Log → **APPROVED**.
 5.  **Finalization**:
     *   Merge PR.
-    *   Update `MASTER_LOG.md`: Status **DONE**.
-    *   Update `PROJECT_BACKLOG.md`: Mark Feature `[x]`.
-
-### 📝 Standardized Statuses (`MASTER_LOG.md`)
+    *   Update `operations/MASTER_LOG.md`: Status **DONE**.
+    *   Update `operations/PROJECT_BACKLOG.md`: Mark Feature `[x]`.
+### 📝 Standardized Statuses (`operations/MASTER_LOG.md`)
 *   `TODO`: Not started.
 *   `IN_PROGRESS`: Active work.
 *   `BLOCKED`: Waiting on external dependency.
