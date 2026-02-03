@@ -7,6 +7,95 @@ Você está operando como o **Orchestrator** no DOE Framework - a camada de inte
 
 ---
 
+---
+
+---
+
+## 🚨 MASTER WORKFLOW: TRACEABILITY + DOE (NON-NEGOTIABLE)
+
+**CRITICAL**: You MUST follow this exact 3-Phase Standard Operating Procedure (SOP) for EVERY task. This combines strict Management (Traceability) with the Execution Framework (DOE).
+
+### Phase 1: PRE-WORK (Traceability & Planning) 🛡️
+*Goal: Never start coding without a locked state.*
+
+1.  **Analyze Request**: Understand the User Goal.
+2.  **Check Context**:
+    *   Read `MASTER_LOG.md` (What was the last action?).
+    *   Read `PROJECT_BACKLOG.md` (Where does this fit?).
+3.  **Plan Strategy**:
+    *   **Existing Plan**: Check `plans/` for an active plan file.
+    *   **New Task**: Create a new plan in `plans/` (e.g., `plans/feature_X/implementation_plan.md`).
+4.  **Lock State**:
+    *   Update `MASTER_LOG.md`:
+        *   **Status**: `IN PROGRESS`
+        *   **Link**: Path to the active Plan file.
+        *   **Start**: Current Timestamp.
+
+### Phase 2: EXECUTION (The DOE Loop) 🧠
+*Goal: Deterministic execution via the DOE Framework.*
+
+1.  **Select Directive**:
+    *   Locate relevant SOP in `directives/` (e.g., `directives/sprint_report.md`).
+    *   *If none exists*: Create a new Directive first.
+2.  **Orchestrate**:
+    *   Read the Directive.
+    *   Validate Inputs (using Multimodal capabilities if needed).
+    *   Plan the tool execution order.
+3.  **Execute (DOE)**:
+    *   Run scripts in `execution/` or standard Skills.
+    *   **Self-Annealing**: If error -> Fix Script -> Update Directive -> Retry.
+4.  **Security Check**:
+    *   Ensure NO secrets are hardcoded (use `.env`).
+    *   Ensure configs are in `config/`.
+    *   Ensure architecture is clean (DDD).
+
+### Phase 3: REVIEW & HANDOFF (The Quality Gate) 🏁
+*Goal: Ensure quality and user approval before merging.*
+
+1.  **Self-Correction**:
+    *   Run linters/tests.
+    *   Verify code against constraints (SOPs).
+2.  **Create PR**:
+    *   Generate a Pull Request (or simulate typical branch workflow).
+    *   Target: `main` or `develop`.
+3.  **Update Traceability**:
+    *   Update `MASTER_LOG.md`: Status **WAITING_REVIEW**.
+4.  **User Approval Loop**:
+    *   Notify User: "PR Ready for Review".
+    *   *If changes requested*: Update Log → **IN_PROGRESS** (Fixes) → Return to Phase 2.
+    *   *If approved*: Update Log → **APPROVED**.
+5.  **Finalization**:
+    *   Merge PR.
+    *   Update `MASTER_LOG.md`: Status **DONE**.
+    *   Update `PROJECT_BACKLOG.md`: Mark Feature `[x]`.
+
+### 📝 Standardized Statuses (`MASTER_LOG.md`)
+*   `TODO`: Not started.
+*   `IN_PROGRESS`: Active work.
+*   `BLOCKED`: Waiting on external dependency.
+*   `WAITING_REVIEW`: PR ready, waiting for user.
+*   `APPROVED`: User gave green light.
+*   `DONE`: Completed & Merged.
+
+---
+
+## 🛡️ SECURITY & ARCHITECTURE STANDARDS (NON-NEGOTIABLE)
+
+### 1. Secrets Management
+*   **Use `.env`**: ALL API keys, passwords, and sensitive tokens MUST be stored in `.env`.
+*   **Directives**: NEVER hardcode secrets in scripts or code.
+*   **Verification**: Ensure `.env` is listed in `.gitignore`.
+
+### 2. Configuration Management
+*   **Location**: ALL configuration files (e.g., `config.json`, `settings.yaml`) MUST be located in the `config/` directory.
+*   **Root Hygiene**: Do NOT clutter the root directory with config files.
+
+### 3. Architecture Principles
+*   **Clean Architecture**: Follow DDD (Domain-Driven Design) principles. Separate Domain, Application, and Infrastructure layers.
+*   **Professional Output**: Ensure code is clean, modular, and testable.
+
+---
+
 ## 🏗️ Arquitetura de 3 Camadas (DOE)
 
 ### **Camada 1: DIRECTIVE (O QUE fazer)**
@@ -394,22 +483,6 @@ def process_large_file(filepath):
 
 ---
 
-## 🎯 Modelo de Uso Recomendado
-
-### **Modelo Claude Sonnet 4**
-
-- Use Sonnet 4 para orquestração principal
-- Ótimo balanço: inteligência vs custo vs velocidade
-- Excelente para análise e decisões
-
-### **Quando Usar Outros Modelos:**
-
-- **Claude Opus 4**: Tarefas extremamente complexas
-- **Claude Haiku 4**: Tarefas simples e repetitivas
-- **Claude 3.5**: Fallback se 4.x indisponível
-
----
-
 ## 📈 Métricas de Performance
 
 Monitore seu próprio desempenho:
@@ -443,33 +516,7 @@ Monitore seu próprio desempenho:
 
 ---
 
-## 🔄 Workflow Típico como Orchestrator
 
-```
-1. User Request Received
-   ↓
-2. <thinking>Entender intenção, identificar diretiva relevante</thinking>
-   ↓
-3. Read Directive (directives/[nome].md)
-   ↓
-4. Validate Inputs
-   ↓
-5. <thinking>Planejar sequência de execução</thinking>
-   ↓
-6. Execute Tools/Scripts em ordem
-   ↓
-7. Monitor for Errors
-   ├─ Success → Continue
-   └─ Error → Self-Anneal
-   ↓
-8. Aggregate Results
-   ↓
-9. Generate Deliverable
-   ↓
-10. Report to User
-```
-
----
 
 ## 📚 Recursos Adicionais
 
@@ -490,12 +537,6 @@ Antes de cada execução, verifique:
 - [ ] Preparado para self-anneal se erros ocorrerem?
 - [ ] Sei onde salvar deliverables?
 - [ ] Vou atualizar diretiva com learnings?
-
----
-
-**Última atualização:** 2024-01-30
-**Versão Claude:** Sonnet 4 / Opus 4
-**Status:** ✅ Ativo
 
 ---
 

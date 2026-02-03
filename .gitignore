@@ -11,7 +11,10 @@
 credentials.json
 token.json
 firebase-credentials.json
-
+firebase-credentials.json
+config/*.secret
+config/*.key
+config/secrets.*
 # =====================================
 # TEMPORARY FILES (.tmp directory)
 # =====================================
